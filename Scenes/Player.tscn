@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bidboe6o75svk"]
+[gd_scene load_steps=3 format=3 uid="uid://bidboe6o75svk"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g1gs3"]
+[ext_resource type="PackedScene" uid="uid://rwijlaawx7cw" path="res://Scenes/UI.tscn" id="2_52k67"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g1gs3")
@@ -12,3 +13,5 @@ polygon = PackedVector2Array(-10, -10, -10, 10, 10, 10, 10, -10)
 
 [node name="Camera" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+
+[node name="UI" parent="." instance=ExtResource("2_52k67")]

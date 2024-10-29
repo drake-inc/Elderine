@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://rwijlaawx7cw"]
+
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_2xjy2"]
+[ext_resource type="StyleBox" uid="uid://bbw6fsyrajqo3" path="res://Textures/Styles/BarBackground.tres" id="1_ftnvk"]
+[ext_resource type="StyleBox" uid="uid://d3ru27ipkjikm" path="res://Textures/Styles/HealthFill.tres" id="2_d2p7r"]
+[ext_resource type="StyleBox" uid="uid://clfb7x5sdxfl3" path="res://Textures/Styles/ManaFill.tres" id="3_l0to4"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_2xjy2")
+
+[node name="Health" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = 30.0
+grow_horizontal = 0
+size_flags_horizontal = 10
+size_flags_vertical = 3
+theme_override_styles/background = ExtResource("1_ftnvk")
+theme_override_styles/fill = ExtResource("2_d2p7r")
+step = 1.0
+value = 70.0
+show_percentage = false
+
+[node name="Mana" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 40.0
+offset_right = -20.0
+offset_bottom = 60.0
+grow_horizontal = 0
+size_flags_horizontal = 10
+size_flags_vertical = 3
+theme_override_styles/background = ExtResource("1_ftnvk")
+theme_override_styles/fill = ExtResource("3_l0to4")
+step = 1.0
+value = 90.0
+show_percentage = false
