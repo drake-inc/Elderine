@@ -1,53 +1,122 @@
-[gd_scene load_steps=5 format=4 uid="uid://brv2klq1en4b"]
+[gd_scene load_steps=13 format=4 uid="uid://brv2klq1en4b"]
 
 [ext_resource type="PackedScene" uid="uid://bidboe6o75svk" path="res://Scenes/Player.tscn" id="1_713tx"]
-[ext_resource type="Texture2D" uid="uid://cjeyqd0yycvek" path="res://Textures/Floor.png" id="2_8co5w"]
+[ext_resource type="Texture2D" uid="uid://cganffr341c73" path="res://Textures/Dungeon/StoneWall.png" id="1_nc5va"]
+[ext_resource type="TileSet" uid="uid://d3wkw88wj7civ" path="res://Textures/Shadows/ShadowTileSet.tres" id="2_e5qga"]
+[ext_resource type="Texture2D" uid="uid://de4t56p55udmq" path="res://Textures/Dungeon/LightStoneFloor.png" id="2_x3ar1"]
+[ext_resource type="Texture2D" uid="uid://cjeyqd0yycvek" path="res://Textures/Dungeon/StoneFloor.png" id="3_lhqnc"]
+[ext_resource type="Texture2D" uid="uid://m1u4otjeng7y" path="res://icon.svg" id="4_5we4g"]
+[ext_resource type="Texture2D" uid="uid://bbju3rbsc8272" path="res://Textures/Dungeon/lightStoneWall.png" id="4_hxab7"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve58b"]
-resource_name = "Floor"
-texture = ExtResource("2_8co5w")
-texture_region_size = Vector2i(800, 400)
-0:0/next_alternative_id = 4
-0:0/animation_mode = 1
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uta51"]
+texture = ExtResource("1_nc5va")
+margins = Vector2i(400, 200)
+texture_region_size = Vector2i(400, 300)
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/next_alternative_id = 9
 0:0/0 = 0
-0:0/0/probability = 0.25
+0:0/0/texture_origin = Vector2i(200, 100)
 0:0/1 = 1
 0:0/1/flip_h = true
-0:0/1/probability = 0.25
+0:0/1/flip_v = true
+0:0/1/texture_origin = Vector2i(200, 100)
+0:0/2 = 2
+0:0/2/flip_h = true
+0:0/2/texture_origin = Vector2i(-200, 100)
+0:0/3 = 3
+0:0/3/flip_v = true
+0:0/3/texture_origin = Vector2i(-200, 100)
+0:0/5 = 5
+0:0/5/texture_origin = Vector2i(-200, -100)
+0:0/6 = 6
+0:0/6/flip_h = true
+0:0/6/flip_v = true
+0:0/6/texture_origin = Vector2i(-200, -100)
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/texture_origin = Vector2i(200, -100)
+0:0/8 = 8
+0:0/8/flip_v = true
+0:0/8/texture_origin = Vector2i(200, -100)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0082"]
+texture = ExtResource("2_x3ar1")
+texture_region_size = Vector2i(800, 400)
+0:0/next_alternative_id = 4
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
 0:0/2 = 2
 0:0/2/flip_v = true
-0:0/2/probability = 0.25
 0:0/3 = 3
 0:0/3/flip_h = true
 0:0/3/flip_v = true
-0:0/3/probability = 0.25
-1:0/animation_mode = 1
+1:0/next_alternative_id = 4
 1:0/0 = 0
-1:0/0/probability = 0.25
-2:0/animation_mode = 1
-2:0/0 = 0
-2:0/0/probability = 0.25
-3:0/animation_mode = 1
-3:0/0 = 0
-3:0/0/probability = 0.25
+1:0/1 = 1
+1:0/1/flip_h = true
+1:0/2 = 2
+1:0/2/flip_v = true
+1:0/3 = 3
+1:0/3/flip_h = true
+1:0/3/flip_v = true
 
-[sub_resource type="TileSet" id="TileSet_l22v7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33ex7"]
+texture = ExtResource("3_lhqnc")
+texture_region_size = Vector2i(800, 400)
+0:0/next_alternative_id = 4
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/flip_v = true
+0:0/2 = 2
+0:0/2/flip_h = true
+0:0/3 = 3
+0:0/3/flip_v = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ug8hc"]
+texture = ExtResource("4_hxab7")
+margins = Vector2i(400, 200)
+texture_region_size = Vector2i(400, 300)
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/next_alternative_id = 4
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(200, 100)
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/flip_v = true
+0:0/1/texture_origin = Vector2i(200, 100)
+0:0/3 = 3
+0:0/3/flip_v = true
+0:0/3/texture_origin = Vector2i(-200, 100)
+0:0/2 = 2
+0:0/2/flip_h = true
+0:0/2/texture_origin = Vector2i(-200, 100)
+
+[sub_resource type="TileSet" id="TileSet_a6o1l"]
 tile_shape = 1
 tile_size = Vector2i(800, 400)
-sources/1 = SubResource("TileSetAtlasSource_ve58b")
+sources/2 = SubResource("TileSetAtlasSource_q0082")
+sources/7 = SubResource("TileSetAtlasSource_ug8hc")
+sources/0 = SubResource("TileSetAtlasSource_uta51")
+sources/3 = SubResource("TileSetAtlasSource_33ex7")
 tile_proxies/coords_level = [[1, Vector2i(0, 0)], [5, Vector2i(0, 0)], [2, Vector2i(0, 0)], [5, Vector2i(1, 0)], [3, Vector2i(0, 0)], [5, Vector2i(2, 0)], [4, Vector2i(0, 0)], [5, Vector2i(3, 0)]]
 
 [node name="Level" type="StaticBody2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_713tx")]
-speed = 1600.0
-camera_zoom = 0.2
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8////AgABAAAAAAD9//7/AgABAAAAAwD9//3/AgABAAAAAQD+//z/AgAAAAAAAgD+//v/AgABAAAAAgD///r/AgAAAAAAAwD///v/AgABAAAAAQAAAPr/AgAAAAAAAQAAAPv/AgABAAAAAgABAPz/AgAAAAAAAQD///n/AgAAAAAAAwABAP3/AgABAAAAAwACAP7/AgABAAAAAAACAP//AgAAAAAAAwACAAAAAgABAAAAAgABAAEAAgAAAAAAAQABAAIAAgABAAAAAQAAAAEAAgABAAAAAwAAAAIAAgABAAAAAgD//wMAAgAAAAAAAwD//wIAAgABAAAAAgD+/wMAAgAAAAAAAQD+/wIAAgAAAAAAAQD9/wEAAgAAAAAAAAD9/wAAAgABAAAAAAD9////AgABAAAAAgD+//7/AgAAAAAAAwD+//3/AgABAAAAAgD///z/AgAAAAAAAwAAAPz/AgABAAAAAgD///3/AgABAAAAAgD///7/AgABAAAAAwD/////AgABAAAAAwD//wAAAgAAAAAAAAD+/wEAAgAAAAAAAgD+/wAAAgABAAAAAQD+////AgAAAAAAAwAAAP3/AgABAAAAAQAAAP7/AgABAAAAAwABAP7/AgABAAAAAwAAAP//AgAAAAAAAQAAAAAAAgAAAAAAAQABAP//AgABAAAAAAABAAAAAgABAAAAAQD//wEAAgAAAAAAAgAAAAMAAgAAAAAAAQAAAAQAAgAAAAAAAQD//wUAAgABAAAAAAD//wQAAgAAAAAAAgAAAPj/AAAAAAAAAQAAAPn/AAAAAAAAAQABAPr/AAAAAAAAAAABAPv/AAAAAAAAAAACAPz/AAAAAAAAAQACAP3/AAAAAAAAAQADAP7/AAAAAAAAAAD8//7/AAAAAAAAAwD8//3/AAAAAAAAAgD9//z/AAAAAAAAAgD9//v/AAAAAAAAAgD+//r/AAAAAAAAAwD+//n/AAAAAAAAAgD///j/AAAAAAAAAwD8/wAAAAAAAAAABgD8/wEAAAAAAAAABgD9/wIAAAAAAAAABQD9/wMAAAAAAAAABgD+/wQAAAAAAAAABQD+/wUAAAAAAAAABgD//wYAAAAAAAAABgAAAAYAAAAAAAAACAAAAAUAAAAAAAAACAABAAQAAAAAAAAACAABAAMAAAAAAAAABwACAAIAAAAAAAAABwACAAEAAAAAAAAABwADAAAAAAAAAAAACAADAP//AAAAAAAACAD7////AAAAAAAABQD8//z/AwAAAAAAAQD8//v/AwAAAAAAAQD9//r/AwAAAAAAAwD9//n/AwAAAAAAAQADAPz/AwAAAAAAAQACAPv/AwAAAAAAAQACAPr/AwAAAAAAAQABAPn/AwAAAAAAAgABAPj/AwAAAAAAAgAAAPf/AwAAAAAAAwAAAPb/AwAAAAAAAgD///X/AwAAAAAAAwD///b/AwAAAAAAAAD+//f/AwAAAAAAAgD+//j/AwAAAAAAAgD7//3/AAAAAAAABgADAP3/AAAAAAAACAA=")
+tile_set = SubResource("TileSet_a6o1l")
+
+[node name="Shadows" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8//z/AwAAAAAAAAD8//v/AwAAAAAAAAD9//r/AwAAAAAAAAD9//n/AwAAAAAAAAD+//j/AwAAAAAAAAD+//f/AwAAAAAAAAD///b/AwAAAAAAAAADAPz/AwAAAAAAAQACAPv/AwAAAAAAAQACAPr/AwAAAAAAAQABAPn/AwAAAAAAAQABAPj/AwAAAAAAAQAAAPf/AwAAAAAAAQAAAPb/AwAAAAAAAQD///X/AwABAAAAAAD8//7/BwAAAAAAAAD8/wAABwAEAAAAAAD8/wEABwACAAAAAAD9/wIABwACAAAAAAD9/wMABwACAAAAAAD+/wQABwACAAAAAAD+/wUABwACAAAAAAD//wYABwACAAAAAAD//wcABwACAAAAAAADAP//BwAEAAAAAgADAAAABwACAAAABQACAAEABwACAAAABQACAAIABwACAAAABQABAAMABwACAAAABQABAAQABwACAAAABQAAAAUABwACAAAABQAAAAYABwACAAAABQADAP3/BwAAAAAABAA=")
+tile_set = ExtResource("2_e5qga")
 
 [node name="Collision" type="CollisionPolygon2D" parent="."]
 build_mode = 1
 polygon = PackedVector2Array(0, -1401, -2802, 0, 0, 1401, 2802, 0)
-disabled = true
 
-[node name="Floor" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD8////AQAAAAAAAwD9//7/AQAAAAAAAAD9//3/AQAAAAAAAgD+//z/AQAAAAAAAgD+//v/AQAAAAAAAwD///r/AQAAAAAAAwD///n/AQAAAAAAAgAAAPr/AQAAAAAAAwAAAPv/AQAAAAAAAAABAPz/AQAAAAAAAwABAP3/AQAAAAAAAQACAP7/AQAAAAAAAwACAP//AQAAAAAAAQACAAAAAQAAAAAAAAABAAEAAQAAAAAAAQABAAIAAQAAAAAAAwAAAAMAAQAAAAAAAQAAAAQAAQAAAAAAAAD//wUAAQAAAAAAAgD//wQAAQAAAAAAAQD+/wMAAQAAAAAAAgD+/wIAAQAAAAAAAwD9/wEAAQAAAAAAAAD9/wAAAQAAAAAAAwD//wAAAQAAAAAAAQD/////AQAAAAAAAwAAAP7/AQAAAAAAAgAAAP3/AQAAAAAAAQAAAPz/AQAAAAAAAgD///v/AQAAAAAAAgD///z/AQAAAAAAAwD+//3/AQAAAAAAAAD+//7/AQAAAAAAAgD9////AQAAAAAAAAD+/wAAAQAAAAAAAgD+////AQAAAAAAAQD///7/AQAAAAAAAAD///3/AQAAAAAAAQD+/wEAAQAAAAAAAwD//wIAAQAAAAAAAwD//wEAAQAAAAAAAwAAAAAAAQAAAAAAAAAAAP//AQAAAAAAAQABAP7/AQAAAAAAAAABAP//AQAAAAAAAQABAAAAAQAAAAAAAQAAAAEAAQAAAAAAAQAAAAIAAQAAAAAAAgD//wMAAQAAAAAAAAA=")
-tile_set = SubResource("TileSet_l22v7")
+[node name="Player" parent="." instance=ExtResource("1_713tx")]
+texture = ExtResource("4_5we4g")
+speed = 1600.0
+camera_zoom = 0.15
