@@ -7,7 +7,6 @@ extends CharacterBody2D
 
 # Movement
 const ASPECT_RATIO = 2
-const DISTORTION_FACTOR = 1 / cos(PI / 6) #magic number
 
 # Health & Mana
 var regen_factor = 1 # set to 0 on damage
@@ -19,8 +18,6 @@ var mana_regen = 60
 var max_mana = 100
 var mana = max_mana
 
-# Magic number
-const DISTORTION = 1 / cos(PI / 6)
 
 # Set defaults
 func _ready() -> void:
@@ -53,8 +50,7 @@ func get_direction() -> Vector2:
 	var direction = Input.get_vector("WalkLeft", "WalkRight", "WalkUp", "WalkDown")
 	
 	# Normalise, accounting for isometric
-	direction.x *= 2 / DISTORTION
+	direction.x *= 2
 	direction = direction.normalized()
-	direction.x *= DISTORTION
 	
 	return direction
