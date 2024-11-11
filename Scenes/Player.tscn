@@ -21,15 +21,16 @@ position_smoothing_enabled = true
 
 [node name="ShadowLight" type="PointLight2D" parent="."]
 scale = Vector2(2, 2)
-energy = 0.5
+energy = 0.4
 range_item_cull_mask = 2
 shadow_enabled = true
 shadow_item_cull_mask = 2
 texture = ExtResource("4_xp6o2")
-texture_scale = 2.0
+texture_scale = 1.5
 
 [node name="SpriteLight" type="PointLight2D" parent="."]
 scale = Vector2(2, 2)
-energy = 0.5
+energy = 0.6
 texture = ExtResource("4_xp6o2")
-texture_scale = 2.0
+texture_scale = 1.5
+height = 1670.0
