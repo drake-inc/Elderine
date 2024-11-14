@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
 # Instancable variables
-@export var texture: Texture
 @export var speed: float
 @export var camera_zoom: float
+
+# Children
+@onready var sprite = $Sprite
+@onready var camera = $Camera
+@onready var ui = $UI
 
 # Movement
 const ASPECT_RATIO = 2
@@ -21,16 +25,18 @@ var mana = max_mana
 
 # Set defaults
 func _ready() -> void:
-	$Camera.zoom = Vector2(camera_zoom, camera_zoom)
-	$Sprite.texture = texture
+	camera.zoom = Vector2(camera_zoom, camera_zoom)
+	sprite.play("idle")
 
 # Update every frame
 func _process(delta: float) -> void:
 
-	if Input.is_action_just_pressed("Test"):
-		health = max(health - 3, 0)
-		mana = max(mana - 10, 0)
+	if Input.is_action_just_pressed("Test") && mana >= 10:
+		sprite.play("attack_2")
+		mana -= 10
 		regen_factor = 0
+	elif Input.is_action_just_released("Test"):
+		sprite.play("idle")
 
 	move_and_collide(get_direction() * speed * delta)
 
@@ -40,10 +46,10 @@ func _physics_process(delta: float) -> void:
 	mana = min(mana + mana_regen * delta * regen_factor, max_mana)
 	regen_factor = min(regen_factor + regen_recovery * delta, 1)
 	
-	$UI.max_health = max_health
-	$UI.health = health
-	$UI.max_mana = max_mana
-	$UI.mana = mana
+	ui.max_health = max_health
+	ui.health = health
+	ui.max_mana = max_mana
+	ui.mana = mana
 
 # Get isometric input direction
 func get_direction() -> Vector2:

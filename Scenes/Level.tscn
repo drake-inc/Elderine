@@ -1,12 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://brv2klq1en4b"]
+[gd_scene load_steps=4 format=4 uid="uid://brv2klq1en4b"]
 
 [ext_resource type="PackedScene" uid="uid://bidboe6o75svk" path="res://Scenes/Player.tscn" id="1_713tx"]
 [ext_resource type="TileSet" uid="uid://d3wkw88wj7civ" path="res://Textures/Shadows/ShadowTileSet.tres" id="2_e5qga"]
-[ext_resource type="Texture2D" uid="uid://m1u4otjeng7y" path="res://icon.svg" id="4_5we4g"]
 [ext_resource type="TileSet" uid="uid://o2hubq2b14oy" path="res://Textures/Dungeon/DungeonTileSet.tres" id="5_528ks"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i5vr1"]
-polygon = PackedVector2Array(5897, 997, 5925, 945, 5952, 927, 5950, 877, 5932, 860, 5940, 845, 5933, 816, 5957, 723, 5960, 585, 5953, 344, 5943, 270, 5929, 264, 5931, 236, 5949, 223, 5939, 126, 5920, 114, 5919, 51, 6015, 1, 6117, 47, 6096, 114, 6072, 135, 6081, 219, 6100, 236, 6100, 262, 6087, 270, 6077, 323, 6072, 696, 6081, 729, 6076, 747, 6082, 786, 6091, 831, 6081, 852, 6093, 869, 6084, 873, 6081, 891, 6082, 935, 6116, 956, 6117, 977, 6126, 993, 6125, 1004, 6013, 1055)
 
 [node name="Level" type="StaticBody2D"]
 y_sort_enabled = true
@@ -51,16 +47,11 @@ polygon = PackedVector2Array(0, 1000, 2000, 0, 1200, -400, 3600, -1600, 1200, -2
 
 [node name="Player" parent="." instance=ExtResource("1_713tx")]
 y_sort_enabled = true
-position = Vector2(4800, -3006)
-texture = ExtResource("4_5we4g")
+position = Vector2(6098, 1728)
 speed = 1600.0
 camera_zoom = 0.15
 
 [node name="Lighting" type="Node2D" parent="."]
-
-[node name="PillarOccluder" type="LightOccluder2D" parent="Lighting"]
-position = Vector2(3, -7)
-occluder = SubResource("OccluderPolygon2D_i5vr1")
 
 [node name="Darkness" type="DirectionalLight2D" parent="Lighting"]
 position = Vector2(5330, 1315)
