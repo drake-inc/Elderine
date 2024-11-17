@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://o2hubq2b14oy"]
+[gd_resource type="TileSet" load_steps=33 format=3 uid="uid://o2hubq2b14oy"]
 
 [ext_resource type="Texture2D" uid="uid://cganffr341c73" path="res://Textures/Dungeon/StoneWall.png" id="1_0yxfm"]
+[ext_resource type="Texture2D" uid="uid://bofndxfrnv577" path="res://Textures/Generics/LeftWallNormal.png" id="2_qdn7h"]
 [ext_resource type="Texture2D" uid="uid://cjeyqd0yycvek" path="res://Textures/Dungeon/StoneFloor.png" id="2_uadbp"]
 [ext_resource type="Texture2D" uid="uid://de4t56p55udmq" path="res://Textures/Dungeon/LightStoneFloor.png" id="3_pbuv4"]
 [ext_resource type="Texture2D" uid="uid://bbju3rbsc8272" path="res://Textures/Dungeon/lightStoneWall.png" id="4_lsiom"]
@@ -9,32 +10,50 @@
 [ext_resource type="Texture2D" uid="uid://cufkkeix6yc5u" path="res://Textures/Dungeon/Torch.png" id="5_mkqee"]
 [ext_resource type="Texture2D" uid="uid://rfmr5cq8bj7c" path="res://Textures/Dungeon/Pillar.png" id="7_83kip"]
 [ext_resource type="Texture2D" uid="uid://to7lxbosjj6f" path="res://Textures/Dungeon/StoneArch2.png" id="7_810mt"]
+[ext_resource type="Texture2D" uid="uid://jkxjoxbheihl" path="res://Textures/Dungeon/Normals/PillarNormal.png" id="11_h68fa"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rx1u1"]
+polygon = PackedVector2Array(-400, -402, 0, -200, -196, -248)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0427o"]
+polygon = PackedVector2Array(-400, 0, 0, 200, -208, 50)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yvvqe"]
+polygon = PackedVector2Array(0, -200, 396, -404, 400, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xgp87"]
+polygon = PackedVector2Array(0, 200, 400, 0, 206, 60)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_powug"]
+diffuse_texture = ExtResource("1_0yxfm")
+normal_texture = ExtResource("2_qdn7h")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uta51"]
-texture = ExtResource("1_0yxfm")
-margins = Vector2i(400, 200)
+resource_name = "StoneWall"
+texture = SubResource("CanvasTexture_powug")
 texture_region_size = Vector2i(400, 300)
 0:0/size_in_atlas = Vector2i(1, 2)
-0:0/next_alternative_id = 9
+0:0/next_alternative_id = 11
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(200, 100)
-0:0/0/y_sort_origin = -200
-0:0/1 = 1
-0:0/1/flip_h = true
-0:0/1/flip_v = true
-0:0/1/texture_origin = Vector2i(200, 100)
-0:0/1/y_sort_origin = -200
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_rx1u1")
+0:0/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_0427o")
 0:0/2 = 2
 0:0/2/flip_h = true
 0:0/2/texture_origin = Vector2i(-200, 100)
-0:0/2/y_sort_origin = -200
-0:0/3 = 3
-0:0/3/flip_v = true
-0:0/3/texture_origin = Vector2i(-200, 100)
-0:0/3/y_sort_origin = -200
+0:0/2/y_sort_origin = 200
+0:0/2/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_yvvqe")
+0:0/2/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_xgp87")
+0:0/9 = 9
+0:0/9/texture_origin = Vector2i(200, 100)
+0:0/9/y_sort_origin = 200
+0:0/10 = 10
+0:0/10/flip_h = true
+0:0/10/texture_origin = Vector2i(-200, 100)
+0:0/10/y_sort_origin = 200
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve58b"]
-resource_name = "Floor"
+resource_name = "StoneFloor"
 texture = ExtResource("2_uadbp")
 texture_region_size = Vector2i(800, 400)
 0:0/next_alternative_id = 4
@@ -107,37 +126,72 @@ texture_region_size = Vector2i(800, 400)
 0:0/0/texture_origin = Vector2i(0, -200)
 0:0/0/z_index = 1
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kkwah"]
+polygon = PackedVector2Array(-400, 0, 0, 200, -210, 56)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6yuao"]
+polygon = PackedVector2Array(-198, 66, -400, 0, 0, 200)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0x381"]
+polygon = PackedVector2Array(192, 68, 0, 200, 400, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n0kv6"]
+polygon = PackedVector2Array(200, 60, 0, 200, 400, 0)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d0kk1"]
+diffuse_texture = ExtResource("4_lsiom")
+normal_texture = ExtResource("2_qdn7h")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ug8hc"]
-texture = ExtResource("4_lsiom")
-margins = Vector2i(400, 200)
+texture = SubResource("CanvasTexture_d0kk1")
 texture_region_size = Vector2i(400, 300)
 0:0/size_in_atlas = Vector2i(1, 2)
-0:0/next_alternative_id = 4
+0:0/next_alternative_id = 6
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(200, 100)
+0:0/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_kkwah")
 0:0/1 = 1
 0:0/1/flip_h = true
 0:0/1/flip_v = true
 0:0/1/texture_origin = Vector2i(200, 100)
-0:0/3 = 3
-0:0/3/flip_v = true
-0:0/3/texture_origin = Vector2i(-200, 100)
+0:0/1/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_6yuao")
 0:0/2 = 2
 0:0/2/flip_h = true
 0:0/2/texture_origin = Vector2i(-200, 100)
+0:0/2/y_sort_origin = 200
+0:0/2/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_0x381")
+0:0/3 = 3
+0:0/3/flip_v = true
+0:0/3/texture_origin = Vector2i(-200, 100)
+0:0/3/y_sort_origin = 200
+0:0/3/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_n0kv6")
+0:0/4 = 4
+0:0/4/texture_origin = Vector2i(200, 100)
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/texture_origin = Vector2i(-200, 100)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2bedo"]
+polygon = PackedVector2Array(11, 54, -102, -17, 14, -69, 129, -6)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w515y"]
+diffuse_texture = ExtResource("7_83kip")
+normal_texture = ExtResource("11_h68fa")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1qi5o"]
-texture = ExtResource("7_83kip")
+texture = SubResource("CanvasTexture_w515y")
 texture_region_size = Vector2i(800, 400)
 0:0/size_in_atlas = Vector2i(1, 3)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 400)
-0:0/0/y_sort_origin = -200
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-108, -11, 8, 56, 136, -9, 15, -79)
+0:0/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_2bedo")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-126, -8, 12, 68, 158, -6, 34, -84)
 
 [resource]
 tile_shape = 1
 tile_size = Vector2i(800, 400)
+occlusion_layer_0/light_mask = 1
+occlusion_layer_1/light_mask = 2
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ve58b")
 sources/2 = SubResource("TileSetAtlasSource_q0082")
