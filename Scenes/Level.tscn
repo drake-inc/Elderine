@@ -112,8 +112,10 @@ texture_region_size = Vector2i(400, 300)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/next_alternative_id = 2
 0:0/0 = 0
+0:0/0/z_index = -2
 0:0/1 = 1
 0:0/1/flip_h = true
+0:0/1/z_index = -2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6opm"]
 texture = ExtResource("8_a60aw")
@@ -170,6 +172,7 @@ texture_region_size = Vector2i(800, 400)
 0:0/size_in_atlas = Vector2i(1, 3)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 400)
+0:0/0/y_sort_origin = -200
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2bedo")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-126, -8, 12, 68, 158, -6, 34, -84)
 
@@ -238,6 +241,6 @@ color = Color(0.393086, 0.393086, 0.393085, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_713tx")]
 y_sort_enabled = true
-position = Vector2(7389, -2023)
+position = Vector2(5225, -1147)
 speed = 1600.0
 camera_zoom = 0.15
