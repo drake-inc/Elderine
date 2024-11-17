@@ -50,7 +50,8 @@ Test={
 
 [layer_names]
 
-2d_render/layer_2="Shadow Layer"
+2d_render/layer_1="Wall Layer"
+2d_render/layer_2="Floor Layer"
 
 [rendering]
 
