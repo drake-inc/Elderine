@@ -1,0 +1,41 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://c2ugtg2p8qv7f"]
+
+[ext_resource type="Texture2D" uid="uid://cadb7n4fl347l" path="res://Textures/Characters/Player/PlayerAttack.png" id="1_6utgp"]
+[ext_resource type="Texture2D" uid="uid://b3pp2syglu287" path="res://Textures/Characters/Player/PlayerAttack2.png" id="2_ss5da"]
+[ext_resource type="Texture2D" uid="uid://cj4rj448ytsvm" path="res://Textures/Characters/Player/PlayerGlow.png" id="3_tyqrp"]
+[ext_resource type="Texture2D" uid="uid://l3q8o5v8r7do" path="res://Textures/Characters/Player/PlayerIdle.png" id="4_0d8td"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6utgp")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ss5da")
+}],
+"loop": true,
+"name": &"attack_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tyqrp")
+}],
+"loop": true,
+"name": &"glow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0d8td")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
