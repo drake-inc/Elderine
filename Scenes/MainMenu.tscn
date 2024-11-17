@@ -5,50 +5,84 @@
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_rwt23")
 script = ExtResource("1_vk2sf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Background" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -50.5
-offset_right = 35.0
-offset_bottom = 50.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 800
+theme_override_constants/margin_right = 800
+
+[node name="Color" type="ColorRect" parent="Background"]
+layout_mode = 2
+color = Color(0.581033, 0.581033, 0.581033, 0.470588)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Title" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Spacer" type="Control" parent="VBoxContainer2/Title"]
+layout_mode = 2
+
+[node name="Main Menu" type="Label" parent="VBoxContainer2/Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 240
+text = "Main Menu
+"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 130
+
+[node name="Spacer" type="Control" parent="VBoxContainer2/Buttons"]
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="VBoxContainer2/Buttons"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="VBoxContainer2/Buttons"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Exit")
 mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 150
 text = "START"
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="VBoxContainer2/Buttons"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 150
 text = "OPTIONS"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer2/Buttons"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Start")
 mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 150
 text = "EXIT"
 
-[connection signal="mouse_entered" from="VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/Exit" to="." method="_on_exit_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer2/Buttons/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer2/Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer2/Buttons/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer2/Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer2/Buttons/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer2/Buttons/Exit" to="." method="_on_exit_pressed"]

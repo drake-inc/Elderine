@@ -1,0 +1,164 @@
+[gd_scene load_steps=3 format=3 uid="uid://do0exjuwjrgl5"]
+
+[ext_resource type="Theme" uid="uid://dmdor7nfugx8w" path="res://Themes/menu.tres" id="1_os012"]
+[ext_resource type="Script" path="res://Scenes/options_menu.gd" id="2_gqxa4"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_os012")
+script = ExtResource("2_gqxa4")
+
+[node name="Background" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 800
+theme_override_constants/margin_right = 800
+
+[node name="Color" type="ColorRect" parent="Background"]
+layout_mode = 2
+color = Color(0.581033, 0.581033, 0.581033, 0.470588)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Spacer" type="Control" parent="VBoxContainer/Title"]
+layout_mode = 2
+
+[node name="Options" type="Label" parent="VBoxContainer/Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 240
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Settings" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Lables" type="VBoxContainer" parent="VBoxContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 180
+
+[node name="Spacer" type="Control" parent="VBoxContainer/Settings/Lables"]
+layout_mode = 2
+
+[node name="Fullscreen" type="Label" parent="VBoxContainer/Settings/Lables"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Fullscreen"
+
+[node name="Vsync" type="Label" parent="VBoxContainer/Settings/Lables"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Vsync"
+
+[node name="Volume" type="Label" parent="VBoxContainer/Settings/Lables"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Volume
+"
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 188
+
+[node name="Spacer" type="Control" parent="VBoxContainer/Settings/Buttons"]
+layout_mode = 2
+
+[node name="Fullscreen" type="OptionButton" parent="VBoxContainer/Settings/Buttons"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../Exit/Buttons/Back")
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 85
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "windowed"
+popup/item_1/text = "borderless"
+popup/item_1/id = 3
+popup/item_2/text = "fullscreen"
+popup/item_2/id = 4
+
+[node name="Vsync" type="OptionButton" parent="VBoxContainer/Settings/Buttons"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 85
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "disabled"
+popup/item_1/text = "enabled"
+popup/item_1/id = 1
+popup/item_2/text = "adaptive"
+popup/item_2/id = 2
+
+[node name="Volume" type="HBoxContainer" parent="VBoxContainer/Settings/Buttons"]
+custom_minimum_size = Vector2(0, 136)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Slider" type="HSlider" parent="VBoxContainer/Settings/Buttons/Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+mouse_default_cursor_shape = 10
+value = 100.0
+rounded = true
+
+[node name="Percent" type="Label" parent="VBoxContainer/Settings/Buttons/Volume"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "100%"
+horizontal_alignment = 2
+
+[node name="Exit" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/Exit"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer/Exit/Buttons"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="VBoxContainer/Exit/Buttons"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../../../Settings/Buttons/Fullscreen")
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[connection signal="item_selected" from="VBoxContainer/Settings/Buttons/Fullscreen" to="." method="_on_fullscreen_item_selected"]
+[connection signal="mouse_entered" from="VBoxContainer/Settings/Buttons/Fullscreen" to="." method="_on_fullscreen_mouse_entered"]
+[connection signal="ready" from="VBoxContainer/Settings/Buttons/Fullscreen" to="." method="_on_fullscreen_ready"]
+[connection signal="item_selected" from="VBoxContainer/Settings/Buttons/Vsync" to="." method="_on_vsync_item_selected"]
+[connection signal="mouse_entered" from="VBoxContainer/Settings/Buttons/Vsync" to="." method="_on_vsync_mouse_entered"]
+[connection signal="ready" from="VBoxContainer/Settings/Buttons/Vsync" to="." method="_on_vsync_ready"]
+[connection signal="mouse_entered" from="VBoxContainer/Settings/Buttons/Volume/Slider" to="." method="_on_slider_mouse_entered"]
+[connection signal="ready" from="VBoxContainer/Settings/Buttons/Volume/Slider" to="." method="_on_slider_ready"]
+[connection signal="value_changed" from="VBoxContainer/Settings/Buttons/Volume/Slider" to="." method="_on_slider_value_changed"]
+[connection signal="mouse_entered" from="VBoxContainer/Exit/Buttons/Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Exit/Buttons/Back" to="." method="_on_back_pressed"]

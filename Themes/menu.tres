@@ -1,8 +1,13 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dmdor7nfugx8w"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dmdor7nfugx8w"]
 
 [ext_resource type="StyleBox" uid="uid://fjpubi12n62e" path="res://Styles/textbox_focus.tres" id="1_u11ok"]
 [ext_resource type="StyleBox" uid="uid://b425l3jpln48t" path="res://Styles/textbox_hover.tres" id="2_tmboe"]
 [ext_resource type="StyleBox" uid="uid://ctbfg488rlij3" path="res://Styles/textbox_normal.tres" id="3_eq1s0"]
+[ext_resource type="Texture2D" uid="uid://ds0a4apy568ou" path="res://Textures/UI/SliderHandle.png" id="4_sq4nl"]
+[ext_resource type="StyleBox" uid="uid://ds1r7fxt71nq0" path="res://Styles/textbox_pressed.tres" id="4_wyl1w"]
+[ext_resource type="StyleBox" uid="uid://e30vsng4qclb" path="res://Styles/slider_progress.tres" id="5_swq3r"]
+[ext_resource type="StyleBox" uid="uid://bbjwjad18o6ee" path="res://Styles/slider_progress_focus.tres" id="6_tau0o"]
+[ext_resource type="StyleBox" uid="uid://lljc3odsp47d" path="res://Styles/slider_background.tres" id="7_trdjp"]
 
 [resource]
 default_font_size = 45
@@ -16,3 +21,10 @@ Button/constants/outline_size = 20
 Button/styles/focus = ExtResource("1_u11ok")
 Button/styles/hover = ExtResource("2_tmboe")
 Button/styles/normal = ExtResource("3_eq1s0")
+HSlider/icons/grabber = ExtResource("4_sq4nl")
+HSlider/icons/grabber_disabled = ExtResource("4_sq4nl")
+HSlider/icons/grabber_highlight = ExtResource("4_sq4nl")
+HSlider/styles/grabber_area = ExtResource("5_swq3r")
+HSlider/styles/grabber_area_highlight = ExtResource("6_tau0o")
+HSlider/styles/slider = ExtResource("7_trdjp")
+OptionButton/styles/pressed = ExtResource("4_wyl1w")
