@@ -49,7 +49,7 @@ polygon = PackedVector2Array(0, 1000, 2000, 0, 1200, -400, 3600, -1600, 1200, -2
 y_sort_enabled = true
 position = Vector2(6098, 1728)
 speed = 1600.0
-camera_zoom = 0.15
+camera_zoom = 0.5
 
 [node name="Lighting" type="Node2D" parent="."]
 
