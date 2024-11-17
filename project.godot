@@ -48,6 +48,11 @@ Test={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Wall Layer"
+2d_render/layer_2="Floor Layer"
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
