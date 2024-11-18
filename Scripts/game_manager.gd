@@ -27,12 +27,14 @@ func _input(event: InputEvent) -> void:
 				set_paused(true)
 				swap_menu(Menu.PAUSE)
 
+# Enable new menu and disable the old one
 func swap_menu(menu: Menu) -> void:
 	last_menu = current_menu
 	current_menu = menu
 	set_enable(last_menu, false)
 	set_enable(current_menu, true)
 
+# Enable or disable a given menu
 func set_enable(menu: Menu, state: bool) -> void:
 	match menu:
 		Menu.MAIN:
@@ -70,6 +72,7 @@ func set_enable(menu: Menu, state: bool) -> void:
 				game_menu = load("res://Scenes/Level.tscn").instantiate()
 				add_child(game_menu)
 
+# Pause/unpause the game (excluding menus)
 func set_paused(state: bool) -> void:
 	get_tree().paused = state
 	Engine.time_scale = !state

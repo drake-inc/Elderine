@@ -8,8 +8,8 @@
 [ext_resource type="StyleBox" uid="uid://e30vsng4qclb" path="res://Styles/slider_progress.tres" id="5_swq3r"]
 [ext_resource type="StyleBox" uid="uid://bbjwjad18o6ee" path="res://Styles/slider_progress_focus.tres" id="6_tau0o"]
 [ext_resource type="StyleBox" uid="uid://lljc3odsp47d" path="res://Styles/slider_background.tres" id="7_trdjp"]
-[ext_resource type="StyleBox" path="res://Styles/popup_hover.tres" id="9_ajmyu"]
-[ext_resource type="StyleBox" path="res://Styles/popup_background.tres" id="10_u6di0"]
+[ext_resource type="StyleBox" uid="uid://bxcpmcp5x8doe" path="res://Styles/popup_hover.tres" id="9_ajmyu"]
+[ext_resource type="StyleBox" uid="uid://xeu7fbjld1ej" path="res://Styles/popup_background.tres" id="10_u6di0"]
 
 [resource]
 default_font_size = 45
