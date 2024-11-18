@@ -241,6 +241,6 @@ color = Color(0.393086, 0.393086, 0.393085, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_713tx")]
 y_sort_enabled = true
-position = Vector2(6012, 1465)
+position = Vector2(5493, 1351)
 speed = 1600.0
 camera_zoom = 0.5

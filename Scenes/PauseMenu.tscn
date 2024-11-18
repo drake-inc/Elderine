@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b152hwpk2w4ym"]
+[gd_scene load_steps=3 format=3 uid="uid://dxae3svmyqig4"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_y3mx8"]
-[ext_resource type="Theme" uid="uid://dmdor7nfugx8w" path="res://Themes/menu.tres" id="2_x7qpl"]
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_apeve"]
+[ext_resource type="Theme" uid="uid://dmdor7nfugx8w" path="res://Themes/menu.tres" id="2_o1ub0"]
 
-[node name="MainMenu" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_y3mx8")
+script = ExtResource("1_apeve")
 
 [node name="Darken" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -21,26 +21,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1120.0
-offset_top = -1080.0
-offset_right = 1120.0
-offset_bottom = 1080.0
+offset_left = -720.0
+offset_top = -980.0
+offset_right = 720.0
+offset_bottom = 980.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 3
 color = Color(0.27451, 0.27451, 0.27451, 1)
 
 [node name="Menu" type="VBoxContainer" parent="Background"]
-process_mode = 3
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -653.5
-offset_right = 653.5
-offset_bottom = 1727.0
+anchor_bottom = 1.0
+offset_left = -422.0
+offset_top = -100.0
+offset_right = 422.0
+offset_bottom = -100.0
 grow_horizontal = 2
-theme = ExtResource("2_x7qpl")
+grow_vertical = 2
+theme = ExtResource("2_o1ub0")
 
 [node name="Title" type="VBoxContainer" parent="Background/Menu"]
 layout_mode = 2
@@ -49,10 +50,10 @@ theme_override_constants/separation = 200
 [node name="Spacer" type="Control" parent="Background/Menu/Title"]
 layout_mode = 2
 
-[node name="Main Menu" type="Label" parent="Background/Menu/Title"]
+[node name="Paused" type="Label" parent="Background/Menu/Title"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 240
-text = "Main Menu
+text = "Paused
 "
 horizontal_alignment = 1
 
@@ -67,28 +68,28 @@ layout_mode = 2
 [node name="Spacer2" type="Control" parent="Background/Menu/Buttons"]
 layout_mode = 2
 
-[node name="Start" type="Button" parent="Background/Menu/Buttons"]
+[node name="Resume" type="Button" parent="Background/Menu/Buttons"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Exit")
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 150
-text = "START"
+text = "Resume"
 
 [node name="Options" type="Button" parent="Background/Menu/Buttons"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 150
-text = "OPTIONS"
+text = "Options"
 
 [node name="Exit" type="Button" parent="Background/Menu/Buttons"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Resume")
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 150
-text = "EXIT"
+text = "Exit"
 
-[connection signal="mouse_entered" from="Background/Menu/Buttons/Start" to="." method="_on_start_mouse_entered"]
-[connection signal="pressed" from="Background/Menu/Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Background/Menu/Buttons/Resume" to="." method="_on_resume_mouse_entered"]
+[connection signal="pressed" from="Background/Menu/Buttons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="mouse_entered" from="Background/Menu/Buttons/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="Background/Menu/Buttons/Options" to="." method="_on_options_pressed"]
 [connection signal="mouse_entered" from="Background/Menu/Buttons/Exit" to="." method="_on_exit_mouse_entered"]

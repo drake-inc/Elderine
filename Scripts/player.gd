@@ -7,7 +7,7 @@ extends CharacterBody2D
 # Children
 @onready var sprite = $Sprite
 @onready var camera = $Camera
-@onready var ui = $UI
+@onready var ui = get_node("UI")
 
 # Movement
 const ASPECT_RATIO = 2

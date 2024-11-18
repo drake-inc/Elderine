@@ -1,0 +1,170 @@
+[gd_scene load_steps=3 format=3 uid="uid://bulkibuwxe1ds"]
+
+[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_o6lol"]
+[ext_resource type="Theme" uid="uid://dmdor7nfugx8w" path="res://Themes/menu.tres" id="1_ufk1e"]
+
+[node name="OptionsMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_o6lol")
+
+[node name="Darken" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1120.0
+offset_top = -1080.0
+offset_right = 1120.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0.27451, 0.27451, 0.27451, 1)
+
+[node name="Menu" type="VBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -637.0
+offset_right = 637.0
+offset_bottom = 1886.0
+grow_horizontal = 2
+theme = ExtResource("1_ufk1e")
+
+[node name="Title" type="VBoxContainer" parent="Background/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Spacer" type="Control" parent="Background/Menu/Title"]
+layout_mode = 2
+
+[node name="Options" type="Label" parent="Background/Menu/Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 240
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Settings" type="HBoxContainer" parent="Background/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Lables" type="VBoxContainer" parent="Background/Menu/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 180
+
+[node name="Spacer" type="Control" parent="Background/Menu/Settings/Lables"]
+layout_mode = 2
+
+[node name="Fullscreen" type="Label" parent="Background/Menu/Settings/Lables"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Fullscreen"
+
+[node name="Vsync" type="Label" parent="Background/Menu/Settings/Lables"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Vsync"
+
+[node name="Volume" type="Label" parent="Background/Menu/Settings/Lables"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Volume
+"
+
+[node name="Buttons" type="VBoxContainer" parent="Background/Menu/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 188
+
+[node name="Spacer" type="Control" parent="Background/Menu/Settings/Buttons"]
+layout_mode = 2
+
+[node name="Fullscreen" type="OptionButton" parent="Background/Menu/Settings/Buttons"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../Exit/Buttons/Back")
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 85
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "windowed"
+popup/item_1/text = "borderless"
+popup/item_1/id = 3
+popup/item_2/text = "fullscreen"
+popup/item_2/id = 4
+
+[node name="Vsync" type="OptionButton" parent="Background/Menu/Settings/Buttons"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 85
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "disabled"
+popup/item_1/text = "enabled"
+popup/item_1/id = 1
+popup/item_2/text = "adaptive"
+popup/item_2/id = 2
+
+[node name="Volume" type="HBoxContainer" parent="Background/Menu/Settings/Buttons"]
+custom_minimum_size = Vector2(0, 136)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Slider" type="HSlider" parent="Background/Menu/Settings/Buttons/Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+mouse_default_cursor_shape = 10
+value = 100.0
+rounded = true
+
+[node name="Percent" type="Label" parent="Background/Menu/Settings/Buttons/Volume"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "100%"
+horizontal_alignment = 2
+
+[node name="Exit" type="HBoxContainer" parent="Background/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Background/Menu/Exit"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Spacer" type="Control" parent="Background/Menu/Exit/Buttons"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Background/Menu/Exit/Buttons"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../../../Settings/Buttons/Fullscreen")
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[connection signal="item_selected" from="Background/Menu/Settings/Buttons/Fullscreen" to="." method="_on_fullscreen_item_selected"]
+[connection signal="mouse_entered" from="Background/Menu/Settings/Buttons/Fullscreen" to="." method="_on_fullscreen_mouse_entered"]
+[connection signal="ready" from="Background/Menu/Settings/Buttons/Fullscreen" to="." method="_on_fullscreen_ready"]
+[connection signal="item_selected" from="Background/Menu/Settings/Buttons/Vsync" to="." method="_on_vsync_item_selected"]
+[connection signal="mouse_entered" from="Background/Menu/Settings/Buttons/Vsync" to="." method="_on_vsync_mouse_entered"]
+[connection signal="ready" from="Background/Menu/Settings/Buttons/Vsync" to="." method="_on_vsync_ready"]
+[connection signal="mouse_entered" from="Background/Menu/Settings/Buttons/Volume/Slider" to="." method="_on_slider_mouse_entered"]
+[connection signal="ready" from="Background/Menu/Settings/Buttons/Volume/Slider" to="." method="_on_slider_ready"]
+[connection signal="value_changed" from="Background/Menu/Settings/Buttons/Volume/Slider" to="." method="_on_slider_value_changed"]
+[connection signal="mouse_entered" from="Background/Menu/Exit/Buttons/Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="Background/Menu/Exit/Buttons/Back" to="." method="_on_back_pressed"]

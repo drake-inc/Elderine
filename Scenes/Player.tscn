@@ -19,8 +19,6 @@ animation = &"attack_2"
 [node name="Camera" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
-[node name="UI" parent="." instance=ExtResource("2_52k67")]
-
 [node name="ShadowLight" type="PointLight2D" parent="."]
 scale = Vector2(2, 2)
 energy = 0.6
@@ -36,3 +34,5 @@ energy = 0.6
 texture = ExtResource("4_xp6o2")
 texture_scale = 1.5
 height = 1670.0
+
+[node name="UI" parent="." instance=ExtResource("2_52k67")]
