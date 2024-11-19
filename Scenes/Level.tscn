@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://brv2klq1en4b"]
+[gd_scene load_steps=33 format=4 uid="uid://brv2klq1en4b"]
 
 [ext_resource type="PackedScene" uid="uid://bidboe6o75svk" path="res://Scenes/Player.tscn" id="1_713tx"]
 [ext_resource type="Texture2D" uid="uid://cganffr341c73" path="res://Textures/Dungeon/StoneWall.png" id="1_gmf2g"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bbju3rbsc8272" path="res://Textures/Dungeon/lightStoneWall.png" id="9_e6sbq"]
 [ext_resource type="Texture2D" uid="uid://rfmr5cq8bj7c" path="res://Textures/Dungeon/Pillar.png" id="10_pdtgn"]
 [ext_resource type="Texture2D" uid="uid://jkxjoxbheihl" path="res://Textures/Dungeon/Normals/PillarNormal.png" id="11_dgp3k"]
+[ext_resource type="TileSet" uid="uid://o2hubq2b14oy" path="res://Textures/Dungeon/DungeonTileSet.tres" id="12_plcu0"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0427o"]
 polygon = PackedVector2Array(-400, 0, 0, 200, -208, 50)
@@ -214,7 +215,7 @@ tile_set = SubResource("TileSet_aj6fq")
 [node name="Decorations" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAFAAgACAAAAAAAAAAJAAgACAAAAAAAAAAHAAwACAAAAAAAAAAGAAgAAwAAAAAAAAAHAAoAAwAAAAAAAAAIAAgAAwAAAAAAAAAHAAQACAAAAAAAAAAHAAYAAwAAAAAAAAAGAPj/BQAAAAAAAQAHAPb/BQAAAAAAAQA=")
-tile_set = SubResource("TileSet_aj6fq")
+tile_set = ExtResource("12_plcu0")
 
 [node name="WallsTop" type="TileMapLayer" parent="."]
 z_index = 1

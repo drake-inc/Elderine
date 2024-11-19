@@ -26,6 +26,11 @@ func _input(event: InputEvent) -> void:
 			Menu.GAME:
 				set_paused(true)
 				swap_menu(Menu.PAUSE)
+	if event.is_action_pressed("toggle_fullscreen"):
+		if DisplayServer.window_get_mode() >= 3:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 
 # Enable new menu and disable the old one
 func swap_menu(menu: Menu) -> void:
