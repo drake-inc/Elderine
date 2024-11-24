@@ -25,7 +25,7 @@ polygon = PackedVector2Array(0, 200, 400, 0, 214, 70)
 diffuse_texture = ExtResource("1_gmf2g")
 normal_texture = ExtResource("2_1ppnc")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uta51"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atfpk"]
 resource_name = "StoneWall"
 texture = SubResource("CanvasTexture_powug")
 texture_region_size = Vector2i(400, 300)
@@ -50,7 +50,7 @@ texture_region_size = Vector2i(400, 300)
 0:0/10/z_index = 1
 0:0/10/y_sort_origin = -200
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve58b"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8waxe"]
 resource_name = "StoneFloor"
 texture = ExtResource("3_m22d0")
 texture_region_size = Vector2i(800, 400)
@@ -69,7 +69,7 @@ texture_region_size = Vector2i(800, 400)
 0:0/3/flip_v = true
 0:0/3/probability = 0.25
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0082"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqql4"]
 texture = ExtResource("4_2pwbl")
 texture_region_size = Vector2i(800, 400)
 0:0/next_alternative_id = 4
@@ -91,13 +91,13 @@ texture_region_size = Vector2i(800, 400)
 1:0/3/flip_h = true
 1:0/3/flip_v = true
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_te3re"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qr2n"]
 texture = ExtResource("5_a1t48")
 texture_region_size = Vector2i(800, 400)
 0:0/0 = 0
 0:0/0/y_sort_origin = -200
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iaif8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iq56h"]
 texture = ExtResource("6_2fvpd")
 texture_region_size = Vector2i(800, 400)
 0:0/size_in_atlas = Vector2i(1, 2)
@@ -106,7 +106,7 @@ texture_region_size = Vector2i(800, 400)
 0:0/0/z_index = 1
 0:0/1 = 1
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6re1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86ap1"]
 texture = ExtResource("7_d0t3a")
 margins = Vector2i(400, 200)
 texture_region_size = Vector2i(400, 300)
@@ -118,7 +118,7 @@ texture_region_size = Vector2i(400, 300)
 0:0/1/flip_h = true
 0:0/1/y_sort_origin = -200
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6opm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xyl5w"]
 texture = ExtResource("8_a60aw")
 texture_region_size = Vector2i(800, 400)
 0:0/size_in_atlas = Vector2i(1, 2)
@@ -136,7 +136,7 @@ polygon = PackedVector2Array(192, 68, 0, 200, 400, 0)
 diffuse_texture = ExtResource("9_e6sbq")
 normal_texture = ExtResource("2_1ppnc")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ug8hc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snnts"]
 texture = SubResource("CanvasTexture_d0kk1")
 texture_region_size = Vector2i(400, 300)
 0:0/size_in_atlas = Vector2i(1, 2)
@@ -167,7 +167,7 @@ polygon = PackedVector2Array(11, 54, -102, -17, 14, -69, 129, -6)
 diffuse_texture = ExtResource("10_pdtgn")
 normal_texture = ExtResource("11_dgp3k")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1qi5o"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_utg1r"]
 texture = SubResource("CanvasTexture_w515y")
 texture_region_size = Vector2i(800, 400)
 0:0/size_in_atlas = Vector2i(1, 3)
@@ -182,15 +182,15 @@ tile_shape = 1
 tile_size = Vector2i(800, 400)
 occlusion_layer_0/light_mask = 2
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_ve58b")
-sources/2 = SubResource("TileSetAtlasSource_q0082")
-sources/7 = SubResource("TileSetAtlasSource_ug8hc")
-sources/0 = SubResource("TileSetAtlasSource_uta51")
-sources/3 = SubResource("TileSetAtlasSource_te3re")
-sources/5 = SubResource("TileSetAtlasSource_h6re1")
-sources/8 = SubResource("TileSetAtlasSource_1qi5o")
-sources/4 = SubResource("TileSetAtlasSource_iaif8")
-sources/6 = SubResource("TileSetAtlasSource_b6opm")
+sources/1 = SubResource("TileSetAtlasSource_8waxe")
+sources/2 = SubResource("TileSetAtlasSource_nqql4")
+sources/7 = SubResource("TileSetAtlasSource_snnts")
+sources/0 = SubResource("TileSetAtlasSource_atfpk")
+sources/3 = SubResource("TileSetAtlasSource_6qr2n")
+sources/5 = SubResource("TileSetAtlasSource_86ap1")
+sources/8 = SubResource("TileSetAtlasSource_utg1r")
+sources/4 = SubResource("TileSetAtlasSource_iq56h")
+sources/6 = SubResource("TileSetAtlasSource_xyl5w")
 tile_proxies/coords_level = [[1, Vector2i(0, 0)], [5, Vector2i(0, 0)], [2, Vector2i(0, 0)], [5, Vector2i(1, 0)], [3, Vector2i(0, 0)], [5, Vector2i(2, 0)], [4, Vector2i(0, 0)], [5, Vector2i(3, 0)]]
 
 [node name="Level" type="StaticBody2D"]

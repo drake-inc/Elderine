@@ -7,7 +7,7 @@ extends CharacterBody2D
 # Children
 @onready var sprite = $Sprite
 @onready var camera = $Camera
-@onready var ui = get_node("UI")
+@onready var ui = $UI
 
 # Movement
 const ASPECT_RATIO = 2
@@ -30,14 +30,6 @@ func _ready() -> void:
 
 # Update every frame
 func _process(delta: float) -> void:
-
-	if Input.is_action_just_pressed("Test") && mana >= 10:
-		sprite.play("attack_2")
-		mana -= 10
-		regen_factor = 0
-	elif Input.is_action_just_released("Test"):
-		sprite.play("idle")
-
 	move_and_collide(get_direction() * speed * delta)
 
 func _physics_process(delta: float) -> void:

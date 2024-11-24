@@ -4,11 +4,12 @@ enum Menu { MAIN, OPTIONS, PAUSE, GAME }
 
 var current_menu = Menu.MAIN
 var last_menu = Menu.MAIN
+var level_index = 0
 
-@onready var main_menu: Node
-@onready var options_menu: Node
-@onready var pause_menu: Node
-@onready var game_menu: Node
+var main_menu: Node
+var options_menu: Node
+var pause_menu: Node
+var game_menu: Node
 
 func _ready() -> void:
 	set_paused(true)
@@ -26,11 +27,16 @@ func _input(event: InputEvent) -> void:
 			Menu.GAME:
 				set_paused(true)
 				swap_menu(Menu.PAUSE)
-	if event.is_action_pressed("toggle_fullscreen"):
+	elif event.is_action_pressed("toggle_fullscreen"):
 		if DisplayServer.window_get_mode() >= 3:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	elif event.is_action_pressed("Test"):
+		if level_index == 0:
+			swap_level(1)
+		else:
+			swap_level(0)
 
 # Enable new menu and disable the old one
 func swap_menu(menu: Menu) -> void:
@@ -38,6 +44,13 @@ func swap_menu(menu: Menu) -> void:
 	current_menu = menu
 	set_enable(last_menu, false)
 	set_enable(current_menu, true)
+
+func swap_level(index: int) -> void:
+	level_index = index
+	if game_menu != null:
+		game_menu.queue_free()
+		game_menu = null
+	set_enable(Menu.GAME, true)
 
 # Enable or disable a given menu
 func set_enable(menu: Menu, state: bool) -> void:
@@ -73,8 +86,11 @@ func set_enable(menu: Menu, state: bool) -> void:
 				pause_menu.queue_free()
 				pause_menu = null
 		Menu.GAME:
-			if state && game_menu == null:
-				game_menu = load("res://Scenes/Level.tscn").instantiate()
+			if state:
+				if level_index == 0:
+					game_menu = load("res://Scenes/Level.tscn").instantiate()
+				else:
+					game_menu = load("res://Scenes/Level1.tscn").instantiate()
 				add_child(game_menu)
 
 # Pause/unpause the game (excluding menus)
