@@ -86,7 +86,7 @@ func set_enable(menu: Menu, state: bool) -> void:
 				pause_menu.queue_free()
 				pause_menu = null
 		Menu.GAME:
-			if state:
+			if state && game_menu == null:
 				if level_index == 0:
 					game_menu = load("res://Scenes/Level.tscn").instantiate()
 				else:
