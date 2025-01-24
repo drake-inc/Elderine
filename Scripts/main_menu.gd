@@ -1,25 +1,28 @@
 extends CanvasLayer
 
-signal start_pressed()
-signal options_pressed()
+@onready var startButton = $Background/Menu/Buttons/Start
+@onready var optionsButton = $Background/Menu/Buttons/Options
+@onready var exitButton = $Background/Menu/Buttons/Exit
 
 func _ready() -> void:
-	$Background/Menu/Buttons/Start.grab_focus()
+	startButton.grab_focus()
 
 func _on_start_pressed() -> void:
-	start_pressed.emit()
+	GameManager.start_pressed()
+	queue_free()
 
 func _on_options_pressed() -> void:
-	options_pressed.emit()
+	GameManager.options_pressed()
+	queue_free()
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 func _on_start_mouse_entered() -> void:
-	$Background/Menu/Buttons/Start.grab_focus()
+	startButton.grab_focus()
 
 func _on_options_mouse_entered() -> void:
-	$Background/Menu/Buttons/Options.grab_focus()
+	optionsButton.grab_focus()
 
 func _on_exit_mouse_entered() -> void:
-	$Background/Menu/Buttons/Exit.grab_focus()
+	exitButton.grab_focus()

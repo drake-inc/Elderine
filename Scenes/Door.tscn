@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dunaodyr02dj3"]
+
+[ext_resource type="Texture2D" uid="uid://bofndxfrnv577" path="res://Textures/Generics/LeftWallNormal.png" id="1_codmo"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_ycqnw"]
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_ycqnw")
+
+[node name="DebugSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_codmo")
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -1)
+polygon = PackedVector2Array(-100, 50, -300, 150, 100, 350, 300, 250)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,7 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c2ugtg2p8qv7f" path="res://Textures/Characters/Player/PlayerAnimation.tres" id="2_t6mkf"]
 [ext_resource type="Texture2D" uid="uid://b5kluh3boppwc" path="res://Textures/Lights/Light.png" id="4_xp6o2"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_g1gs3")
 
 [node name="Collision" type="CollisionPolygon2D" parent="."]

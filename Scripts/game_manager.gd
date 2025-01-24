@@ -58,8 +58,6 @@ func set_enable(menu: Menu, state: bool) -> void:
 		Menu.MAIN:
 			if state && main_menu == null:
 				main_menu = load("res://Scenes/MainMenu.tscn").instantiate()
-				main_menu.connect("options_pressed", _on_options_pressed)
-				main_menu.connect("start_pressed", _on_start_pressed)
 				add_child(main_menu)
 			elif main_menu != null:
 				main_menu.queue_free()
@@ -70,7 +68,6 @@ func set_enable(menu: Menu, state: bool) -> void:
 		Menu.OPTIONS:
 			if state && options_menu == null:
 				options_menu = load("res://Scenes/OptionsMenu.tscn").instantiate()
-				options_menu.connect("back_pressed", _on_back_pressed)
 				add_child(options_menu)
 			elif options_menu != null:
 				options_menu.queue_free()
@@ -78,9 +75,6 @@ func set_enable(menu: Menu, state: bool) -> void:
 		Menu.PAUSE:
 			if state && pause_menu == null:
 				pause_menu = load("res://Scenes/PauseMenu.tscn").instantiate()
-				pause_menu.connect("options_pressed", _on_options_pressed)
-				pause_menu.connect("to_menu_pressed", _on_to_menu_pressed)
-				pause_menu.connect("resume_pressed", _on_resume_pressed)
 				add_child(pause_menu)
 			elif pause_menu != null:
 				pause_menu.queue_free()
@@ -98,19 +92,19 @@ func set_paused(state: bool) -> void:
 	get_tree().paused = state
 	Engine.time_scale = !state
 
-func _on_start_pressed() -> void:
+func start_pressed() -> void:
 	set_paused(false)
 	swap_menu(Menu.GAME)
 
-func _on_options_pressed() -> void:
+func options_pressed() -> void:
 	swap_menu(Menu.OPTIONS)
 
-func _on_back_pressed() -> void:
+func back_pressed() -> void:
 	swap_menu(last_menu)
 	
-func _on_resume_pressed() -> void:
+func resume_pressed() -> void:
 	set_paused(false)
 	swap_menu(Menu.GAME)
 
-func _on_to_menu_pressed() -> void:
+func to_menu_pressed() -> void:
 	swap_menu(Menu.MAIN)

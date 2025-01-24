@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://dt8foy33vnfca"]
+[gd_scene load_steps=34 format=4 uid="uid://dt8foy33vnfca"]
 
 [ext_resource type="Texture2D" uid="uid://cganffr341c73" path="res://Textures/Dungeon/StoneWall.png" id="1_gml7p"]
 [ext_resource type="Texture2D" uid="uid://bofndxfrnv577" path="res://Textures/Generics/LeftWallNormal.png" id="2_otrk3"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://jkxjoxbheihl" path="res://Textures/Dungeon/Normals/PillarNormal.png" id="11_avawo"]
 [ext_resource type="TileSet" uid="uid://o2hubq2b14oy" path="res://Textures/Dungeon/DungeonTileSet.tres" id="12_3qrg2"]
 [ext_resource type="TileSet" uid="uid://d3wkw88wj7civ" path="res://Textures/Shadows/ShadowTileSet.tres" id="13_8t758"]
+[ext_resource type="PackedScene" uid="uid://dunaodyr02dj3" path="res://Scenes/Door.tscn" id="14_egpcp"]
 [ext_resource type="PackedScene" uid="uid://bidboe6o75svk" path="res://Scenes/Player.tscn" id="14_m4316"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0427o"]
@@ -227,6 +228,9 @@ z_index = 1
 tile_map_data = PackedByteArray("AAD9//z/CwAAAAAAAAD9//v/CwAAAAAAAAD+//r/CwAAAAAAAAD+//n/CwAAAAAAAAD///j/CwAAAAAAAAAAAPj/CwAAAAAAAQAAAPn/CwAAAAAAAQABAPr/CwAAAAAAAQABAPv/CwAAAAAAAQACAPz/CwAAAAAAAQACAP7/CwAAAAAAAwABAP//CwAAAAAAAwABAAAACwAAAAAAAwAAAAEACwAAAAAAAwAAAAIACwAAAAAAAwD9//7/CwAAAAAAAgD9////CwAAAAAAAgD+/wAACwAAAAAAAgD+/wEACwAAAAAAAgD//wIACwAAAAAAAgACAP3/CwACAAAAAAD///f/CwABAAAAAAD8//3/CwACAAAAAQD//wMACwABAAAAAQA=")
 tile_set = ExtResource("13_8t758")
 
+[node name="Door" parent="." instance=ExtResource("14_egpcp")]
+position = Vector2(-1000, 300)
+
 [node name="Collision" type="CollisionPolygon2D" parent="."]
 build_mode = 1
 polygon = PackedVector2Array(0, 1000, 2000, 0, 0, -1000, -2000, 0)
@@ -237,6 +241,6 @@ color = Color(0.393086, 0.393086, 0.393085, 1)
 
 [node name="Player" parent="." instance=ExtResource("14_m4316")]
 y_sort_enabled = true
-position = Vector2(-21, 11)
+position = Vector2(-829, 371)
 speed = 1600.0
 camera_zoom = 0.5
