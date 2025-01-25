@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dunaodyr02dj3"]
+[gd_scene load_steps=3 format=3 uid="uid://cot26x1kkls0c"]
 
 [ext_resource type="Texture2D" uid="uid://bofndxfrnv577" path="res://Textures/Generics/LeftWallNormal.png" id="1_codmo"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="1_ycqnw"]

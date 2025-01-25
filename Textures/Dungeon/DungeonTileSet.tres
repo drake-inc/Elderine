@@ -117,6 +117,7 @@ texture_region_size = Vector2i(400, 300)
 0:0/0 = 0
 0:0/1 = 1
 0:0/1/flip_h = true
+0:0/1/y_sort_origin = -200
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6opm"]
 texture = ExtResource("7_810mt")

@@ -11,9 +11,11 @@ var options_menu: Node
 var pause_menu: Node
 var game_menu: Node
 
+var player: CharacterBody2D
+
 func _ready() -> void:
 	set_paused(true)
-	set_enable(Menu.MAIN, true)
+	player = load("res://Scenes/Player.tscn").instantiate()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -21,7 +23,6 @@ func _input(event: InputEvent) -> void:
 			Menu.OPTIONS:
 				swap_menu(last_menu)
 			Menu.PAUSE:
-				print("a")
 				set_paused(false)
 				swap_menu(Menu.GAME)
 			Menu.GAME:
@@ -32,11 +33,6 @@ func _input(event: InputEvent) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
-	elif event.is_action_pressed("Test"):
-		if level_index == 0:
-			swap_level(1)
-		else:
-			swap_level(0)
 
 # Enable new menu and disable the old one
 func swap_menu(menu: Menu) -> void:
@@ -45,12 +41,36 @@ func swap_menu(menu: Menu) -> void:
 	set_enable(last_menu, false)
 	set_enable(current_menu, true)
 
-func swap_level(index: int) -> void:
+func swap_level(index: int, spawn: Vector2) -> void:
 	level_index = index
-	if game_menu != null:
-		game_menu.queue_free()
-		game_menu = null
+	
+	# Create black loading screen
+	var canvas_layer = CanvasLayer.new()
+	var black_screen = ColorRect.new()
+	canvas_layer.layer = 1000
+	add_child(canvas_layer)
+	canvas_layer.add_child(black_screen)
+	black_screen.color = Color(0, 0, 0, 0)
+	black_screen.anchor_right = 1
+	black_screen.anchor_bottom = 1
+	
+	# Fade in the black screen
+	var tween = create_tween()
+	tween.tween_property(black_screen, "color:a", 1.0, 0.5)
+	await tween.finished
+	
+	# Swap levels
+	set_enable(Menu.GAME, false)
+	await get_tree().process_frame
 	set_enable(Menu.GAME, true)
+	player.teleport_to(spawn)
+	
+	# Fade out the black screen
+	tween = create_tween()
+	tween.tween_property(black_screen, "color:a", 0.0, 0.5)
+	await tween.finished
+	
+	canvas_layer.queue_free()
 
 # Enable or disable a given menu
 func set_enable(menu: Menu, state: bool) -> void:
@@ -63,6 +83,7 @@ func set_enable(menu: Menu, state: bool) -> void:
 				main_menu.queue_free()
 				main_menu = null
 			if state && game_menu != null:
+				player.get_parent().remove_child(player)
 				game_menu.queue_free()
 				game_menu = null
 		Menu.OPTIONS:
@@ -86,6 +107,12 @@ func set_enable(menu: Menu, state: bool) -> void:
 				else:
 					game_menu = load("res://Scenes/Level1.tscn").instantiate()
 				add_child(game_menu)
+				game_menu.add_child(player)
+				print("Player parent after moving to new level:", player.get_parent())
+			elif game_menu != null:
+				player.get_parent().remove_child(player)
+				game_menu.queue_free()
+				game_menu = null
 
 # Pause/unpause the game (excluding menus)
 func set_paused(state: bool) -> void:

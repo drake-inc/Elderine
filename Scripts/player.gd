@@ -52,3 +52,7 @@ func get_direction() -> Vector2:
 	direction = direction.normalized()
 	
 	return direction
+
+func teleport_to(destination: Vector2) -> void:
+	global_position = destination
+	$Camera.reset_smoothing()
