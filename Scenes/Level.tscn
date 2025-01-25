@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://brv2klq1en4b"]
+[gd_scene load_steps=33 format=4 uid="uid://brv2klq1en4b"]
 
 [ext_resource type="Texture2D" uid="uid://cganffr341c73" path="res://Textures/Dungeon/StoneWall.png" id="1_gmf2g"]
 [ext_resource type="Texture2D" uid="uid://bofndxfrnv577" path="res://Textures/Generics/LeftWallNormal.png" id="2_1ppnc"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://jkxjoxbheihl" path="res://Textures/Dungeon/Normals/PillarNormal.png" id="11_dgp3k"]
 [ext_resource type="TileSet" uid="uid://o2hubq2b14oy" path="res://Textures/Dungeon/DungeonTileSet.tres" id="12_plcu0"]
 [ext_resource type="PackedScene" uid="uid://cot26x1kkls0c" path="res://Scenes/Door.tscn" id="14_xcmbo"]
-[ext_resource type="PackedScene" uid="uid://bidboe6o75svk" path="res://Scenes/Player.tscn" id="15_kbpc1"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0427o"]
 polygon = PackedVector2Array(-400, 0, 0, 200, -208, 50)
@@ -233,6 +232,7 @@ tile_set = ExtResource("2_e5qga")
 [node name="Door" parent="." instance=ExtResource("14_xcmbo")]
 position = Vector2(5200, -3800)
 levelID = 1
+destinationPosition = Vector2(-800, 400)
 
 [node name="Collision" type="CollisionPolygon2D" parent="."]
 build_mode = 1
@@ -245,6 +245,3 @@ polygon = PackedVector2Array(0, 1000, 2000, 0, 1200, -400, 3600, -1600, 1200, -2
 [node name="Darkness" type="CanvasModulate" parent="."]
 position = Vector2(5330, 1315)
 color = Color(0.393086, 0.393086, 0.393085, 1)
-
-[node name="Player" parent="." instance=ExtResource("15_kbpc1")]
-position = Vector2(1224, -1089)

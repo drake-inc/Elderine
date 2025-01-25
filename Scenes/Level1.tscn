@@ -229,6 +229,7 @@ tile_set = ExtResource("13_8t758")
 
 [node name="Door" parent="." instance=ExtResource("14_egpcp")]
 position = Vector2(-1000, 300)
+destinationPosition = Vector2(5000, -3500)
 
 [node name="Collision" type="CollisionPolygon2D" parent="."]
 build_mode = 1

@@ -11,7 +11,7 @@ var options_menu: Node
 var pause_menu: Node
 var game_menu: Node
 
-var player: CharacterBody2D
+var player: Player
 
 func _ready() -> void:
 	set_paused(true)

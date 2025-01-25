@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 # Instancable variables
 @export var speed: float
@@ -54,5 +55,5 @@ func get_direction() -> Vector2:
 	return direction
 
 func teleport_to(destination: Vector2) -> void:
-	global_position = destination
+	position = destination
 	$Camera.reset_smoothing()
