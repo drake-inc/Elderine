@@ -244,4 +244,4 @@ color = Color(0.393086, 0.393086, 0.393085, 1)
 y_sort_enabled = true
 position = Vector2(5493, 1351)
 speed = 1600.0
-camera_zoom = 0.5
+default_camera_zoom = 0.5
