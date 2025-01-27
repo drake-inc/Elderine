@@ -8,8 +8,6 @@
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_g1gs3")
-speed = 1600.0
-camera_zoom = 0.5
 
 [node name="Collision" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-64, -64, -64, 64, 64, 64, 64, -64)
