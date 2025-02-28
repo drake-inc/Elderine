@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://jkxjoxbheihl" path="res://Textures/Dungeon/Normals/PillarNormal.png" id="11_dgp3k"]
 [ext_resource type="TileSet" uid="uid://o2hubq2b14oy" path="res://Textures/Dungeon/DungeonTileSet.tres" id="12_plcu0"]
 [ext_resource type="PackedScene" uid="uid://cot26x1kkls0c" path="res://Scenes/Door.tscn" id="14_xcmbo"]
-[ext_resource type="Texture2D" uid="uid://b1boq0ipx5ce" path="res://Textures/Animations/Trap.png" id="15_80c2i"]
+[ext_resource type="PackedScene" uid="uid://51rscj0pgqap" path="res://Scenes/Trap.tscn" id="15_7bsvm"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0427o"]
 polygon = PackedVector2Array(-400, 0, 0, 200, -208, 50)
@@ -247,7 +247,5 @@ polygon = PackedVector2Array(0, 1000, 2000, 0, 1200, -400, 3600, -1600, 1200, -2
 position = Vector2(5330, 1315)
 color = Color(0.393086, 0.393086, 0.393085, 1)
 
-[node name="Trap" type="Sprite2D" parent="."]
-position = Vector2(5783, 1595)
-scale = Vector2(0.486335, 0.458042)
-texture = ExtResource("15_80c2i")
+[node name="Trap" parent="." instance=ExtResource("15_7bsvm")]
+position = Vector2(1354, -934)
